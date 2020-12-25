@@ -18,4 +18,11 @@ public class GreetingController {
                 .delayElements(Duration.ofMillis(1500))
                    .log();
     }
+
+    @GetMapping(value = "/fluxstream", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+    public Flux<Long> getNumberStream(){
+
+        return Flux.interval(Duration.ofSeconds(1))
+                .log();
+    }
 }

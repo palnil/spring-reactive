@@ -47,8 +47,28 @@ public class GreetingControllerTest {
                 .expectNext(5)
                 .verifyComplete();
 
+    }
 
 
+    @Test
+    public void getNumbersStream_ReturnsNumbersStream(){
+
+        Flux<Long> longNumbers =  webTestClient.get().uri("/fluxstream")
+                .accept(MediaType.APPLICATION_STREAM_JSON)
+                .exchange()
+                .expectStatus().isOk()
+                .returnResult(Long.class)
+                .getResponseBody();
+
+        StepVerifier.create(longNumbers)
+                .expectNext(0l)
+                .expectNext(1l)
+                .expectNext(2l)
+                .expectNext(3l)
+                .expectNext(4l)
+                .thenCancel()
+                .verify();
 
     }
+
 }
