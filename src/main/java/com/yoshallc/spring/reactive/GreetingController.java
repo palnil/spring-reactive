@@ -29,10 +29,4 @@ public class GreetingController {
                 .log();
     }
 
-   /* @GetMapping(value = "/flux")
-    public int getNumber() {
-
-        return 0;
-    }
-*/
 }
