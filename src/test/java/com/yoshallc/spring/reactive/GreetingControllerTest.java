@@ -71,4 +71,21 @@ public class GreetingControllerTest {
 
     }
 
+    @Test
+    public void getustomerStream_ReturnsCustomerStream(){
+
+        Flux<Customer> customerFlux =  webTestClient.get().uri("/customers")
+                .accept(MediaType.APPLICATION_STREAM_JSON)
+                .exchange()
+                .expectStatus().isOk()
+                .returnResult(Customer.class)
+                .getResponseBody();
+
+        StepVerifier.create(customerFlux)
+                .expectNext(new Customer("Nilesh Patel", 41))
+                .thenCancel()
+                .verify();
+
+    }
+
 }

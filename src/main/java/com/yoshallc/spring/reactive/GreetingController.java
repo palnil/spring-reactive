@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 @RestController
 @Log4j2
@@ -27,6 +28,18 @@ public class GreetingController {
         log.info("/fluxstream end point");
         return Flux.interval(Duration.ofMillis(100))
                 .log();
+    }
+
+    @GetMapping(value = "/customers", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+    public Flux<Customer> getCustomers(){
+
+        log.info("/customers end point");
+        return Flux.just(new Customer("Nilesh Patel",41),
+                        new Customer("Palak Patel", 41),
+                        new Customer("Swina Patel", 16),
+                        new Customer("Stuti Patel", 12))
+                        .log();
+
     }
 
 }
