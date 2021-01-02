@@ -10,7 +10,7 @@ public class SpringReactiveApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(SpringReactiveApplication.class,args);
+        SpringApplication.run(SpringReactiveApplication.class, args);
         log.info("Welcome");
 
     }

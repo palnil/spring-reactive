@@ -13,16 +13,16 @@ import java.time.Duration;
 public class GreetingController {
 
     @GetMapping(value = "/flux")
-    public Flux<Integer> getNumber(){
+    public Flux<Integer> getNumber() {
 
         log.info("/flux end point");
-        return Flux.just(1,2,3,4,5)
+        return Flux.just(1, 2, 3, 4, 5)
                 .delayElements(Duration.ofMillis(100))
-                   .log();
+                .log();
     }
 
     @GetMapping(value = "/fluxstream", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
-    public Flux<Long> getNumberStream(){
+    public Flux<Long> getNumberStream() {
 
         log.info("/fluxstream end point");
         return Flux.interval(Duration.ofMillis(100))
@@ -30,14 +30,14 @@ public class GreetingController {
     }
 
     @GetMapping(value = "/customers", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
-    public Flux<Customer> getCustomers(){
+    public Flux<Customer> getCustomers() {
 
         log.info("/customers end point");
-        return Flux.just(new Customer("Nilesh Patel",41),
-                        new Customer("Palak Patel", 41),
-                        new Customer("Swina Patel", 16),
-                        new Customer("Stuti Patel", 12))
-                        .log();
+        return Flux.just(new Customer("Nilesh Patel", 41),
+                new Customer("Palak Patel", 41),
+                new Customer("Swina Patel", 16),
+                new Customer("Stuti Patel", 12))
+                .log();
 
     }
 

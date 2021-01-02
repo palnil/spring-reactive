@@ -29,9 +29,9 @@ public class GreetingControllerTest {
     }
 
     @Test
-    public void getNumbers_ReturnsNumbers(){
+    public void getNumbers_ReturnsNumbers() {
 
-      Flux<Integer> numbers=  webTestClient.get().uri("/flux")
+        Flux<Integer> numbers = webTestClient.get().uri("/flux")
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
                 .expectStatus().isOk()
@@ -51,9 +51,9 @@ public class GreetingControllerTest {
 
 
     @Test
-    public void getNumbersStream_ReturnsNumbersStream(){
+    public void getNumbersStream_ReturnsNumbersStream() {
 
-        Flux<Long> longNumbers =  webTestClient.get().uri("/fluxstream")
+        Flux<Long> longNumbers = webTestClient.get().uri("/fluxstream")
                 .accept(MediaType.APPLICATION_STREAM_JSON)
                 .exchange()
                 .expectStatus().isOk()
@@ -72,9 +72,9 @@ public class GreetingControllerTest {
     }
 
     @Test
-    public void getustomerStream_ReturnsCustomerStream(){
+    public void getustomerStream_ReturnsCustomerStream() {
 
-        Flux<Customer> customerFlux =  webTestClient.get().uri("/customers")
+        Flux<Customer> customerFlux = webTestClient.get().uri("/customers")
                 .accept(MediaType.APPLICATION_STREAM_JSON)
                 .exchange()
                 .expectStatus().isOk()

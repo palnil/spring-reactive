@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,11 +22,13 @@
 
         <sonar.sources>${project.basedir}/src/main</sonar.sources>
         <sonar.tests>${project.basedir}/src/test</sonar.tests>
-        <sonar.jacoco.itReportPaths>${project.basedir}/target/coverage-reports/jacoco-it.exec</sonar.jacoco.itReportPaths>
+        <sonar.jacoco.itReportPaths>${project.basedir}/target/coverage-reports/jacoco-it.exec
+        </sonar.jacoco.itReportPaths>
         <sonar.jacoco.reportPaths>${project.basedir}/target/coverage-reports/jacoco.exec</sonar.jacoco.reportPaths>
         <sonar-maven-plugin.version>3.4.1.1168</sonar-maven-plugin.version>
         <sonar.java.codeCoveragePlugin>jacoco</sonar.java.codeCoveragePlugin>
-        <sonar.junit.reportPaths>${project.basedir}/target/surefire-reports,${project.basedir}/target/failsafe-reports</sonar.junit.reportPaths>
+        <sonar.junit.reportPaths>${project.basedir}/target/surefire-reports,${project.basedir}/target/failsafe-reports
+        </sonar.junit.reportPaths>
     </properties>
 
     <dependencies>
@@ -40,19 +42,19 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-          <!--  <version>5.3.1</version>-->
+            <!--  <version>5.3.1</version>-->
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-           <!-- <version>5.3.1</version>-->
+            <!-- <version>5.3.1</version>-->
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-           <!-- <version>5.3.1</version>-->
+            <!-- <version>5.3.1</version>-->
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -91,7 +93,7 @@
         </dependency>
 
 
-       <dependency>
+        <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>spring-web-test-client</artifactId>
             <version>3.2.0</version>
