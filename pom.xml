@@ -35,11 +35,8 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
+        <!-- testing -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -93,6 +90,15 @@
             <scope>test</scope>
         </dependency>
 
+
+       <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>spring-web-test-client</artifactId>
+            <version>3.2.0</version>
+            <scope>test</scope>
+        </dependency>
+
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -120,6 +126,7 @@
                 <version>2.2.5.RELEASE</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <testMode>WEBTESTCLIENT</testMode>
                     <testFramework>JUNIT5</testFramework>
                     <baseClassForTests>com.yoshallc.spring.reactive.BaseTestClass</baseClassForTests>
                 </configuration>
